@@ -1,0 +1,122 @@
+[
+  {
+    "id": "product-card",
+    "title": "Product Card",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Responsive product card with image, title, price, and add to cart button",
+    "template": "Create a responsive [framework] product card with image, title, price, and an 'Add to cart' button. Use [style]. Props: { id, imageUrl, title, price, onAdd }. Make accessible with aria labels.",
+    "variables": ["framework", "style"],
+    "icon": "ShoppingBag"
+  },
+  {
+    "id": "testimonial-carousel",
+    "title": "Testimonial Carousel",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Accessible testimonial carousel with autoplay and controls",
+    "template": "A testimonial carousel component that accepts an array of { name, photo, quote }. Autoplay optional, accessible controls. No external carousel libraries.",
+    "variables": [],
+    "icon": "Quote"
+  },
+  {
+    "id": "hero-section",
+    "title": "Hero Section",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Hero banner with headline, subtext, CTA, and responsive image",
+    "template": "Hero banner with headline, subtext, call-to-action, and responsive image. Use lazy loading for images.",
+    "variables": [],
+    "icon": "Zap"
+  },
+  {
+    "id": "modal-dialog",
+    "title": "Modal Dialog",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Reusable modal with focus trap and accessibility features",
+    "template": "Reusable modal component with focus trap, close on ESC, and accessible ARIA roles.",
+    "variables": [],
+    "icon": "Square"
+  },
+  {
+    "id": "responsive-grid",
+    "title": "Responsive Grid Layout",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Grid with responsive columns and gap utilities",
+    "template": "Grid with responsive columns and gap utilities using Tailwind classes.",
+    "variables": [],
+    "icon": "Grid3X3"
+  },
+  {
+    "id": "form-validation",
+    "title": "Form with Validation",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Form component with client-side validation and error messages",
+    "template": "Form component with client-side validation, error messages, and form submit handler stub.",
+    "variables": [],
+    "icon": "FileText"
+  },
+  {
+    "id": "accessible-button",
+    "title": "Accessible Button",
+    "category": "UI / Frontend",
+    "subcategory": "Accessibility",
+    "description": "Button component with size variants and accessibility states",
+    "template": "Button component with size variants, aria-pressed states, and keyboard focus styles.",
+    "variables": [],
+    "icon": "MousePointer"
+  },
+  {
+    "id": "profile-card",
+    "title": "Profile Card",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Small card showing avatar, name, bio, and action buttons",
+    "template": "Small card showing avatar, name, short bio, and action buttons.",
+    "variables": [],
+    "icon": "User"
+  },
+  {
+    "id": "loading-skeleton",
+    "title": "Loading Skeleton",
+    "category": "UI / Frontend",
+    "subcategory": "Animations",
+    "description": "Skeleton loading variants using CSS animations",
+    "template": "Skeleton loading variants (text, avatar, card) using CSS animations.",
+    "variables": [],
+    "icon": "Loader"
+  },
+  {
+    "id": "toast-notification",
+    "title": "Toast Notification",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Non-blocking toasts with queueing and auto-dismiss",
+    "template": "Non-blocking toasts with queueing, auto-dismiss, and undo action option.",
+    "variables": [],
+    "icon": "Bell"
+  },
+  {
+    "id": "icon-grid",
+    "title": "Icon Grid",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Grid displaying icons from SVG sprite with labels",
+    "template": "Grid that displays icons from an inlined SVG sprite with labels.",
+    "variables": [],
+    "icon": "Grid"
+  },
+  {
+    "id": "footer-links",
+    "title": "Footer Links",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Simple footer with link list and copyright",
+    "template": "Simple footer with link list and copyright.",
+    "variables": [],
+    "icon": "Link"
+  }
+]

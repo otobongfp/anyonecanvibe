@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ui-frontend",
+    "name": "UI / Frontend",
+    "description": "User interface components and layouts",
+    "active": true,
+    "subcategories": [
+      "Components",
+      "Layouts",
+      "Forms",
+      "Accessibility",
+      "Animations",
+      "Patterns"
+    ]
+  },
+  {
+    "id": "backend-database",
+    "name": "Backend / Database",
+    "description": "Server-side logic and data management",
+    "active": false,
+    "subcategories": [
+      "APIs",
+      "Database",
+      "Authentication",
+      "Caching",
+      "File Upload",
+      "Webhooks"
+    ]
+  },
+  {
+    "id": "devops",
+    "name": "DevOps",
+    "description": "Deployment and infrastructure",
+    "active": false,
+    "subcategories": [
+      "Docker",
+      "CI/CD",
+      "Monitoring",
+      "Security",
+      "Scaling",
+      "Backup"
+    ]
+  },
+  {
+    "id": "data-ml",
+    "name": "Data / ML",
+    "description": "Data processing and machine learning",
+    "active": false,
+    "subcategories": [
+      "Data Processing",
+      "ML Models",
+      "Analytics",
+      "Visualization",
+      "ETL",
+      "APIs"
+    ]
+  },
+  {
+    "id": "testing",
+    "name": "Testing",
+    "description": "Testing strategies and tools",
+    "active": false,
+    "subcategories": [
+      "Unit Tests",
+      "Integration",
+      "E2E",
+      "Performance",
+      "Security",
+      "Mocking"
+    ]
+  }
+]
