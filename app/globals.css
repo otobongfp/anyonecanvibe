@@ -5,15 +5,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --wire-bg: #0b0b0c;
-  --wire-stroke: #ffffff;
-  --wire-accent: #98fb98;
+  --wire-bg: #2c413a;
+  --wire-stroke: #807b67;
+  --wire-accent: #807b67;
 }
 
 .light {
-  --wire-bg: #ffffff;
-  --wire-stroke: #0b0b0c;
-  --wire-accent: #22c55e;
+  --wire-bg: #f8f6ea;
+  --wire-stroke: #2c413a;
+  --wire-accent: #807b67;
 }
 
 /* Override Tailwind colors with CSS custom properties */
@@ -265,15 +265,10 @@ a {
   color: var(--wire-bg);
 }
 
-/* Ensure proper contrast for wire-button in both themes */
-.light .wire-button:hover {
-  background-color: var(--wire-stroke);
-  color: var(--wire-bg);
-}
-
+/* Ensure better contrast in dark mode */
 .dark .wire-button:hover {
-  background-color: var(--wire-stroke);
-  color: var(--wire-bg);
+  background-color: #f8f6ea;
+  color: #2c413a;
 }
 
 .wire-button:disabled {
@@ -312,8 +307,16 @@ button {
   color: var(--wire-stroke) !important;
 }
 
-button:hover {
-  color: var(--wire-bg) !important;
+/* Ensure Link components with wire-button class work properly */
+a.wire-button:hover {
+  background-color: var(--wire-stroke);
+  color: var(--wire-bg);
+}
+
+/* Ensure better contrast for Link components in dark mode */
+.dark a.wire-button:hover {
+  background-color: #f8f6ea;
+  color: #2c413a;
 }
 
 /* Fix common button patterns */
