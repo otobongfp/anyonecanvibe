@@ -120,7 +120,7 @@ export default function PreviewModal({
               Discover amazing products and services that will transform your
               experience
             </p>
-            <button className="bg-wire-bg text-wire-accent px-8 py-3 rounded font-semibold text-lg hover:bg-wire-stroke/10 transition-colors">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded font-semibold text-lg hover:bg-gray-100 transition-colors">
               Get Started
             </button>
           </div>
@@ -133,7 +133,7 @@ export default function PreviewModal({
               <h3 className="font-semibold text-gray-900 text-lg">
                 Modal Title
               </h3>
-              <button className="text-wire-stroke/60 hover:text-wire-stroke text-xl">
+              <button className="text-gray-400 hover:text-gray-600 text-xl">
                 ×
               </button>
             </div>
@@ -267,7 +267,7 @@ export default function PreviewModal({
                   Item has been added to your cart successfully.
                 </p>
               </div>
-              <button className="ml-4 text-wire-accent hover:text-wire-accent/80 text-xl">
+              <button className="ml-4 text-green-500 hover:text-green-700 text-xl">
                 ×
               </button>
             </div>
