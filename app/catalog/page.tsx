@@ -179,7 +179,7 @@ export default function CatalogPage() {
       <div className="flex h-[calc(100vh-80px)]">
         {view === "categories" ? (
           /* Categories Grid View */
-          <div className="flex-1 p-6 overflow-y-auto">
+          <div className="flex-1 p-6 overflow-y-auto main-content">
             <div className="max-w-6xl mx-auto">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold text-wire-stroke mb-2">
@@ -241,7 +241,7 @@ export default function CatalogPage() {
             )}
 
             {/* Prompt Items Grid */}
-            <div className="flex-1 p-6 overflow-y-auto">
+            <div className="flex-1 p-6 overflow-y-auto main-content">
               <div className="mb-6">
                 <div className="flex items-center mb-4">
                   <button
