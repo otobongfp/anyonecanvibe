@@ -53,10 +53,14 @@ export default function LandingPage() {
             anyonecanvibe
           </h1>
           <p className="text-xl md:text-2xl text-wire-stroke/80 mb-12 max-w-3xl mx-auto">
-            Whether you're using Lovable, Bolt, Cursor, or v0, take fine-grained
-            control of your AI development with composable prompts that are
-            richer in detail, more precise in scope, and perfectly tailored to
-            your vision.
+            Whether you&apos;re using Lovable, Bolt, Cursor, or v0, take
+            fine-grained control of your AI development with composable prompts
+            that are richer in detail, more precise in scope, and perfectly
+            tailored to your vision.
+          </p>
+
+          <p className="text-xl md:text-2xl text-wire-stroke/80 mb-12 max-w-3xl mx-auto">
+            Never get lost trying to describe what is on your mind.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">

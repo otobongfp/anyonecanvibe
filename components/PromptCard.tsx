@@ -4,6 +4,8 @@ import { useState } from "react";
 import { PromptItem } from "@/types";
 import { Plus, Check, Eye } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import InlinePreview from "./InlinePreview";
+import InlinePreviewLayouts from "./InlinePreviewLayouts";
 
 interface PromptCardProps {
   item: PromptItem;
@@ -21,7 +23,10 @@ export default function PromptCard({
   const [showIntentInput, setShowIntentInput] = useState(false);
   const [intent, setIntent] = useState("");
 
-  const IconComponent = item.icon ? (LucideIcons as any)[item.icon] : Plus;
+  const IconComponent =
+    item.icon && (LucideIcons as any)[item.icon]
+      ? (LucideIcons as any)[item.icon]
+      : Plus;
 
   const handleAdd = () => {
     if (intent.trim()) {
@@ -76,8 +81,15 @@ export default function PromptCard({
 
       <p className="text-wire-stroke/80 text-sm mb-4">{item.description}</p>
 
+      {/* Inline Preview */}
+      {item.subcategory === "Layouts" ? (
+        <InlinePreviewLayouts item={item} />
+      ) : (
+        <InlinePreview item={item} />
+      )}
+
       {/* Action Buttons */}
-      <div className="flex justify-end">
+      <div className="flex justify-end mt-3">
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -85,8 +97,8 @@ export default function PromptCard({
             onPreview?.(item);
           }}
           className="wire-button p-2"
-          aria-label="Show preview"
-          title="Preview component"
+          aria-label="Show full preview"
+          title="Show full preview"
         >
           <Eye className="h-4 w-4" />
         </button>

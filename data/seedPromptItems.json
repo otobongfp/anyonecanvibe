@@ -118,5 +118,475 @@
     "template": "Simple footer with link list and copyright.",
     "variables": [],
     "icon": "Link"
+  },
+  {
+    "id": "navbar-responsive",
+    "title": "Responsive Navbar",
+    "category": "UI / Frontend",
+    "subcategory": "Navigation",
+    "description": "Mobile-first navigation with hamburger menu and dropdown",
+    "template": "Responsive navbar with mobile hamburger menu, dropdown navigation, and logo. Include active state styling and smooth transitions.",
+    "variables": ["framework", "style"],
+    "icon": "Menu"
+  },
+  {
+    "id": "breadcrumb-navigation",
+    "title": "Breadcrumb Navigation",
+    "category": "UI / Frontend",
+    "subcategory": "Navigation",
+    "description": "Hierarchical navigation showing current page path",
+    "template": "Breadcrumb component that accepts an array of { label, href } objects. Show current page without link, previous pages as clickable links.",
+    "variables": [],
+    "icon": "ChevronRight"
+  },
+  {
+    "id": "tab-navigation",
+    "title": "Tab Navigation",
+    "category": "UI / Frontend",
+    "subcategory": "Navigation",
+    "description": "Accessible tab interface with keyboard navigation",
+    "template": "Tab navigation component with keyboard arrow key support, ARIA attributes, and content panels. Include active state styling.",
+    "variables": [],
+    "icon": "Layout"
+  },
+  {
+    "id": "pagination-controls",
+    "title": "Pagination Controls",
+    "category": "UI / Frontend",
+    "subcategory": "Navigation",
+    "description": "Page navigation with ellipsis for large datasets",
+    "template": "Pagination component with page numbers, previous/next buttons, and ellipsis for large page counts. Include disabled states.",
+    "variables": [],
+    "icon": "ChevronsLeft"
+  },
+  {
+    "id": "sidebar-navigation",
+    "title": "Sidebar Navigation",
+    "category": "UI / Frontend",
+    "subcategory": "Navigation",
+    "description": "Collapsible sidebar with nested menu items",
+    "template": "Collapsible sidebar with nested menu items, expand/collapse functionality, and responsive behavior. Include icons and active states.",
+    "variables": [],
+    "icon": "PanelLeft"
+  },
+  {
+    "id": "data-table",
+    "title": "Data Table",
+    "category": "UI / Frontend",
+    "subcategory": "Data Display",
+    "description": "Sortable table with pagination and search",
+    "template": "Data table with sortable columns, pagination, search functionality, and responsive design. Include loading states and empty states.",
+    "variables": ["framework", "style"],
+    "icon": "Table"
+  },
+  {
+    "id": "card-list",
+    "title": "Card List",
+    "category": "UI / Frontend",
+    "subcategory": "Data Display",
+    "description": "Responsive grid of cards with hover effects",
+    "template": "Responsive card list component with hover effects, loading states, and empty state. Cards should be clickable and accessible.",
+    "variables": [],
+    "icon": "Grid3X3"
+  },
+  {
+    "id": "stats-dashboard",
+    "title": "Stats Dashboard",
+    "category": "UI / Frontend",
+    "subcategory": "Data Display",
+    "description": "Dashboard with key metrics and charts",
+    "template": "Dashboard component displaying key metrics with icons, trend indicators, and mini charts. Include loading states and error handling.",
+    "variables": [],
+    "icon": "BarChart3"
+  },
+  {
+    "id": "timeline-component",
+    "title": "Timeline Component",
+    "category": "UI / Frontend",
+    "subcategory": "Data Display",
+    "description": "Vertical timeline showing events or progress",
+    "template": "Timeline component with events, dates, and descriptions. Include different states (completed, current, upcoming) and responsive design.",
+    "variables": [],
+    "icon": "Clock"
+  },
+  {
+    "id": "search-input",
+    "title": "Search Input",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Search input with autocomplete and suggestions",
+    "template": "Search input with autocomplete dropdown, debounced search, and keyboard navigation. Include clear button and loading indicator.",
+    "variables": [],
+    "icon": "Search"
+  },
+  {
+    "id": "file-upload",
+    "title": "File Upload",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Drag-and-drop file upload with progress",
+    "template": "File upload component with drag-and-drop, progress bar, file type validation, and preview. Include error states and file size limits.",
+    "variables": [],
+    "icon": "Upload"
+  },
+  {
+    "id": "multi-select",
+    "title": "Multi-Select Dropdown",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Multi-select with search and tag display",
+    "template": "Multi-select dropdown with search functionality, selected items as tags, and keyboard navigation. Include select all/clear options.",
+    "variables": [],
+    "icon": "CheckSquare"
+  },
+  {
+    "id": "date-range-picker",
+    "title": "Date Range Picker",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Calendar component for selecting date ranges",
+    "template": "Date range picker with calendar interface, keyboard navigation, and validation. Include preset ranges (last week, month, etc.).",
+    "variables": [],
+    "icon": "Calendar"
+  },
+  {
+    "id": "rating-input",
+    "title": "Rating Input",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Star rating component with hover effects",
+    "template": "Star rating component with hover effects, half-star support, and accessibility features. Include read-only and interactive modes.",
+    "variables": [],
+    "icon": "Star"
+  },
+  {
+    "id": "alert-banner",
+    "title": "Alert Banner",
+    "category": "UI / Frontend",
+    "subcategory": "Feedback",
+    "description": "Dismissible alert with different severity levels",
+    "template": "Alert banner with different types (success, warning, error, info), dismissible functionality, and icons. Include auto-dismiss option.",
+    "variables": [],
+    "icon": "AlertTriangle"
+  },
+  {
+    "id": "progress-bar",
+    "title": "Progress Bar",
+    "category": "UI / Frontend",
+    "subcategory": "Feedback",
+    "description": "Animated progress bar with percentage display",
+    "template": "Progress bar component with percentage display, smooth animations, and different sizes. Include indeterminate state for loading.",
+    "variables": [],
+    "icon": "TrendingUp"
+  },
+  {
+    "id": "loading-spinner",
+    "title": "Loading Spinner",
+    "category": "UI / Frontend",
+    "subcategory": "Feedback",
+    "description": "Customizable loading spinner with size variants",
+    "template": "Loading spinner with different sizes, colors, and animation speeds. Include overlay option for full-screen loading.",
+    "variables": [],
+    "icon": "Loader2"
+  },
+  {
+    "id": "tooltip-component",
+    "title": "Tooltip Component",
+    "category": "UI / Frontend",
+    "subcategory": "Feedback",
+    "description": "Contextual tooltip with positioning options",
+    "template": "Tooltip component with smart positioning, delay options, and rich content support. Include keyboard accessibility and mobile touch support.",
+    "variables": [],
+    "icon": "MessageCircle"
+  },
+  {
+    "id": "notification-center",
+    "title": "Notification Center",
+    "category": "UI / Frontend",
+    "subcategory": "Feedback",
+    "description": "Notification panel with different types and actions",
+    "template": "Notification center with different types (success, error, info), action buttons, and grouping. Include sound and vibration options.",
+    "variables": [],
+    "icon": "Bell"
+  },
+  {
+    "id": "header-component",
+    "title": "Page Header",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Page header with title, actions, and breadcrumbs",
+    "template": "Page header component with title, subtitle, action buttons, and optional breadcrumbs. Include responsive behavior and sticky option.",
+    "variables": [],
+    "icon": "Heading"
+  },
+  {
+    "id": "container-layout",
+    "title": "Container Layout",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Responsive container with max-width and padding",
+    "template": "Container component with responsive max-widths, consistent padding, and optional background. Include different size variants.",
+    "variables": [],
+    "icon": "Box"
+  },
+  {
+    "id": "split-panel",
+    "title": "Split Panel",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Resizable split panel layout",
+    "template": "Split panel component with resizable divider, minimum/maximum sizes, and keyboard controls. Include vertical and horizontal orientations.",
+    "variables": [],
+    "icon": "PanelLeftClose"
+  },
+  {
+    "id": "sticky-header",
+    "title": "Sticky Header",
+    "category": "UI / Frontend",
+    "subcategory": "Layouts",
+    "description": "Header that sticks to top when scrolling",
+    "template": "Sticky header that becomes fixed when scrolling past a threshold. Include smooth transitions and backdrop blur effect.",
+    "variables": [],
+    "icon": "Pin"
+  },
+  {
+    "id": "dropdown-menu",
+    "title": "Dropdown Menu",
+    "category": "UI / Frontend",
+    "subcategory": "Interactive",
+    "description": "Context menu with keyboard navigation",
+    "template": "Dropdown menu with keyboard navigation, submenus, dividers, and icons. Include click-outside-to-close and escape key handling.",
+    "variables": [],
+    "icon": "MoreVertical"
+  },
+  {
+    "id": "accordion-component",
+    "title": "Accordion",
+    "category": "UI / Frontend",
+    "subcategory": "Interactive",
+    "description": "Collapsible content sections with smooth animation",
+    "template": "Accordion component with smooth expand/collapse animations, keyboard navigation, and optional single/multiple open modes.",
+    "variables": [],
+    "icon": "ChevronDown"
+  },
+  {
+    "id": "slider-component",
+    "title": "Range Slider",
+    "category": "UI / Frontend",
+    "subcategory": "Interactive",
+    "description": "Dual-handle range slider with labels",
+    "template": "Range slider with dual handles, value labels, step increments, and keyboard controls. Include disabled state and custom styling.",
+    "variables": [],
+    "icon": "Sliders"
+  },
+  {
+    "id": "toggle-switch",
+    "title": "Toggle Switch",
+    "category": "UI / Frontend",
+    "subcategory": "Interactive",
+    "description": "Animated toggle switch with labels",
+    "template": "Toggle switch component with smooth animation, labels, and different sizes. Include disabled state and loading indicator option.",
+    "variables": [],
+    "icon": "ToggleLeft"
+  },
+  {
+    "id": "image-gallery",
+    "title": "Image Gallery",
+    "category": "UI / Frontend",
+    "subcategory": "Media",
+    "description": "Responsive image gallery with lightbox",
+    "template": "Image gallery with responsive grid, lightbox modal, lazy loading, and keyboard navigation. Include image captions and zoom functionality.",
+    "variables": [],
+    "icon": "Image"
+  },
+  {
+    "id": "video-player",
+    "title": "Video Player",
+    "category": "UI / Frontend",
+    "subcategory": "Media",
+    "description": "Custom video player with controls",
+    "template": "Custom video player with play/pause, progress bar, volume control, and fullscreen. Include keyboard shortcuts and mobile touch controls.",
+    "variables": [],
+    "icon": "Play"
+  },
+  {
+    "id": "audio-player",
+    "title": "Audio Player",
+    "category": "UI / Frontend",
+    "subcategory": "Media",
+    "description": "Compact audio player with waveform",
+    "template": "Audio player component with play/pause, progress bar, volume control, and optional waveform visualization. Include playlist support.",
+    "variables": [],
+    "icon": "Volume2"
+  },
+  {
+    "id": "drag-drop-zone",
+    "title": "Drag & Drop Zone",
+    "category": "UI / Frontend",
+    "subcategory": "Advanced",
+    "description": "File drop zone with drag states",
+    "template": "Drag and drop zone with visual feedback, file validation, and progress indicators. Include multiple file support and error handling.",
+    "variables": [],
+    "icon": "Download"
+  },
+  {
+    "id": "infinite-scroll",
+    "title": "Infinite Scroll",
+    "category": "UI / Frontend",
+    "subcategory": "Advanced",
+    "description": "Infinite scroll with loading indicators",
+    "template": "Infinite scroll component with intersection observer, loading indicators, and error retry. Include performance optimizations for large lists.",
+    "variables": [],
+    "icon": "ArrowDown"
+  },
+  {
+    "id": "virtual-list",
+    "title": "Virtual List",
+    "category": "UI / Frontend",
+    "subcategory": "Advanced",
+    "description": "Virtualized list for large datasets",
+    "template": "Virtual list component for rendering large datasets efficiently. Include dynamic item heights, scroll restoration, and keyboard navigation.",
+    "variables": [],
+    "icon": "List"
+  },
+  {
+    "id": "sortable-list",
+    "title": "Sortable List",
+    "category": "UI / Frontend",
+    "subcategory": "Advanced",
+    "description": "Drag-and-drop sortable list items",
+    "template": "Sortable list with drag and drop reordering, visual feedback, and keyboard controls. Include nested items and disabled states.",
+    "variables": [],
+    "icon": "GripVertical"
+  },
+  {
+    "id": "chart-component",
+    "title": "Chart Component",
+    "category": "UI / Frontend",
+    "subcategory": "Data Display",
+    "description": "Responsive chart with multiple chart types",
+    "template": "Chart component supporting line, bar, pie, and area charts. Include responsive design, animations, and interactive tooltips.",
+    "variables": [],
+    "icon": "PieChart"
+  },
+  {
+    "id": "calendar-widget",
+    "title": "Calendar Widget",
+    "category": "UI / Frontend",
+    "subcategory": "Data Display",
+    "description": "Interactive calendar with event display",
+    "template": "Calendar widget with month/week/day views, event display, and date selection. Include keyboard navigation and responsive design.",
+    "variables": [],
+    "icon": "Calendar"
+  },
+  {
+    "id": "search-filters",
+    "title": "Search Filters",
+    "category": "UI / Frontend",
+    "subcategory": "Forms",
+    "description": "Advanced search with multiple filter options",
+    "template": "Search filters component with multiple filter types (text, select, date range, checkbox). Include clear all and filter count display.",
+    "variables": [],
+    "icon": "Filter"
+  },
+  {
+    "id": "stepper-component",
+    "title": "Stepper Component",
+    "category": "UI / Frontend",
+    "subcategory": "Navigation",
+    "description": "Multi-step form with progress indicator",
+    "template": "Stepper component for multi-step forms with progress indicator, validation, and navigation controls. Include optional step skipping.",
+    "variables": [],
+    "icon": "ChevronRight"
+  },
+  {
+    "id": "floating-action-button",
+    "title": "Floating Action Button",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "FAB with expandable menu options",
+    "template": "Floating action button with expandable menu, smooth animations, and accessibility features. Include different positions and sizes.",
+    "variables": [],
+    "icon": "Plus"
+  },
+  {
+    "id": "badge-component",
+    "title": "Badge Component",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Status badges with different variants",
+    "template": "Badge component with different variants (success, warning, error, info), sizes, and optional icons. Include dismissible option.",
+    "variables": [],
+    "icon": "Award"
+  },
+  {
+    "id": "avatar-component",
+    "title": "Avatar Component",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "User avatar with fallback and status indicator",
+    "template": "Avatar component with image fallback, initials, status indicator, and different sizes. Include group avatar option.",
+    "variables": [],
+    "icon": "User"
+  },
+  {
+    "id": "chip-component",
+    "title": "Chip Component",
+    "category": "UI / Frontend",
+    "subcategory": "Components",
+    "description": "Removable chips for tags and filters",
+    "template": "Chip component with removable option, different variants, and icons. Include keyboard navigation and accessibility features.",
+    "variables": [],
+    "icon": "X"
+  },
+  {
+    "id": "skeleton-loader",
+    "title": "Skeleton Loader",
+    "category": "UI / Frontend",
+    "subcategory": "Animations",
+    "description": "Skeleton placeholders for loading states",
+    "template": "Skeleton loader with different shapes (text, avatar, card, list) and shimmer animation. Include customizable colors and sizes.",
+    "variables": [],
+    "icon": "Loader"
+  },
+  {
+    "id": "fade-transition",
+    "title": "Fade Transition",
+    "category": "UI / Frontend",
+    "subcategory": "Animations",
+    "description": "Smooth fade in/out transitions",
+    "template": "Fade transition component with customizable duration, delay, and easing. Include enter/exit animations and conditional rendering.",
+    "variables": [],
+    "icon": "Eye"
+  },
+  {
+    "id": "slide-transition",
+    "title": "Slide Transition",
+    "category": "UI / Frontend",
+    "subcategory": "Animations",
+    "description": "Slide in/out animations for content",
+    "template": "Slide transition component with directional options (up, down, left, right) and customizable duration. Include spring animations.",
+    "variables": [],
+    "icon": "ArrowRight"
+  },
+  {
+    "id": "bounce-animation",
+    "title": "Bounce Animation",
+    "category": "UI / Frontend",
+    "subcategory": "Animations",
+    "description": "Bounce effect for attention-grabbing elements",
+    "template": "Bounce animation component with customizable intensity, duration, and trigger options. Include hover and click triggers.",
+    "variables": [],
+    "icon": "Zap"
+  },
+  {
+    "id": "pulse-animation",
+    "title": "Pulse Animation",
+    "category": "UI / Frontend",
+    "subcategory": "Animations",
+    "description": "Pulsing effect for loading and status indicators",
+    "template": "Pulse animation component with customizable speed, scale, and color. Include different pulse patterns and conditional activation.",
+    "variables": [],
+    "icon": "Activity"
   }
 ]

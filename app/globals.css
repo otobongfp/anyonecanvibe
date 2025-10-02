@@ -116,6 +116,76 @@ label {
   color: var(--wire-stroke) !important;
 }
 
+/* Override common Tailwind colors to use theme variables */
+.light .bg-white {
+  background-color: var(--wire-bg) !important;
+}
+
+.light .text-white {
+  color: var(--wire-stroke) !important;
+}
+
+.light .text-gray-900 {
+  color: var(--wire-stroke) !important;
+}
+
+.light .text-gray-800 {
+  color: var(--wire-stroke) !important;
+}
+
+.light .text-gray-700 {
+  color: var(--wire-stroke) !important;
+}
+
+.light .text-gray-600 {
+  color: var(--wire-stroke) !important;
+}
+
+.light .text-gray-500 {
+  color: var(--wire-stroke) !important;
+}
+
+.light .border-gray-200 {
+  border-color: var(--wire-stroke) !important;
+}
+
+.light .border-gray-300 {
+  border-color: var(--wire-stroke) !important;
+}
+
+/* Dark mode overrides for common colors */
+.dark .bg-white {
+  background-color: var(--wire-bg) !important;
+}
+
+.dark .text-gray-900 {
+  color: var(--wire-stroke) !important;
+}
+
+.dark .text-gray-800 {
+  color: var(--wire-stroke) !important;
+}
+
+.dark .text-gray-700 {
+  color: var(--wire-stroke) !important;
+}
+
+.dark .text-gray-600 {
+  color: var(--wire-stroke) !important;
+}
+
+.dark .text-gray-500 {
+  color: var(--wire-stroke) !important;
+}
+
+.dark .border-gray-200 {
+  border-color: var(--wire-stroke) !important;
+}
+
+.dark .border-gray-300 {
+  border-color: var(--wire-stroke) !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -195,6 +265,17 @@ a {
   color: var(--wire-bg);
 }
 
+/* Ensure proper contrast for wire-button in both themes */
+.light .wire-button:hover {
+  background-color: var(--wire-stroke);
+  color: var(--wire-bg);
+}
+
+.dark .wire-button:hover {
+  background-color: var(--wire-stroke);
+  color: var(--wire-bg);
+}
+
 .wire-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -224,4 +305,56 @@ a {
 .wire-input:focus {
   outline: none;
   border-color: var(--wire-accent);
+}
+
+/* Additional theme-aware button styles */
+button {
+  color: var(--wire-stroke) !important;
+}
+
+button:hover {
+  color: var(--wire-bg) !important;
+}
+
+/* Fix common button patterns */
+.bg-blue-600 {
+  background-color: var(--wire-accent) !important;
+}
+
+.text-blue-600 {
+  color: var(--wire-accent) !important;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: var(--wire-accent) !important;
+  opacity: 0.8;
+}
+
+/* Fix input and form elements */
+input,
+textarea,
+select {
+  background-color: var(--wire-bg) !important;
+  color: var(--wire-stroke) !important;
+  border-color: var(--wire-stroke) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--wire-stroke) !important;
+  opacity: 0.5;
+}
+
+/* Fix common background patterns */
+.bg-gray-100 {
+  background-color: var(--wire-bg) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--wire-bg) !important;
+}
+
+.bg-gray-200 {
+  background-color: var(--wire-stroke) !important;
+  opacity: 0.1;
 }
