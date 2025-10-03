@@ -105,8 +105,8 @@ export default function PromptCard({
       </div>
 
       {showIntentInput && (
-        <div className="absolute inset-0 bg-wire-bg border-2 border-wire-stroke p-4 z-10">
-          <h4 className="font-semibold mb-2">
+        <div className="absolute inset-0 bg-wire-bg border-2 border-wire-stroke p-3 sm:p-4 z-10">
+          <h4 className="font-semibold mb-2 text-sm sm:text-base">
             How will you use this component?
           </h4>
           <input
@@ -115,14 +115,14 @@ export default function PromptCard({
             onChange={(e) => setIntent(e.target.value)}
             onKeyDown={handleKeyPress}
             placeholder="e.g., Showing testimonials on product page"
-            className="wire-input w-full mb-3"
+            className="wire-input w-full mb-3 text-sm sm:text-base"
             autoFocus
           />
-          <div className="flex space-x-2">
+          <div className="flex flex-col sm:flex-row gap-2">
             <button
               onClick={handleAdd}
               disabled={!intent.trim()}
-              className="wire-button flex-1"
+              className="wire-button flex-1 text-sm sm:text-base"
             >
               Confirm
             </button>
@@ -131,7 +131,7 @@ export default function PromptCard({
                 setShowIntentInput(false);
                 setIntent("");
               }}
-              className="wire-button flex-1"
+              className="wire-button flex-1 text-sm sm:text-base"
             >
               Cancel
             </button>

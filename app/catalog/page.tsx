@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles, HelpCircle } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import UsageGuide from "@/components/UsageGuide";
 import { PromptItem, BucketItem, Category, AppState } from "@/types";
 import {
   loadAppState,
@@ -41,7 +42,7 @@ export default function CatalogPage() {
   );
   const [selectedSubcategory, setSelectedSubcategory] =
     useState<string>("Components");
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
   const [bucketOpen, setBucketOpen] = useState(false);
   const [composeModalOpen, setComposeModalOpen] = useState(false);
   const [composeResult, setComposeResult] = useState<any>(null);
@@ -51,6 +52,7 @@ export default function CatalogPage() {
   const [previewItem, setPreviewItem] = useState<PromptItem | null>(null);
   const [searchResults, setSearchResults] = useState<PromptItem[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [usageGuideOpen, setUsageGuideOpen] = useState(false);
 
   const promptItems = seedPromptItems as PromptItem[];
   const categoryData = categories as Category[];
@@ -171,7 +173,17 @@ export default function CatalogPage() {
                 </h1>
               </div>
             </div>
-            <ThemeToggle />
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <button
+                onClick={() => setUsageGuideOpen(true)}
+                className="wire-button flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base"
+                aria-label="Open usage guide"
+              >
+                <HelpCircle className="h-4 w-4" />
+                <span className="hidden sm:inline">Usage Guide</span>
+              </button>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </header>
@@ -330,6 +342,12 @@ export default function CatalogPage() {
           isAdded={bucketItemIds.has(previewItem.id)}
         />
       )}
+
+      {/* Usage Guide Modal */}
+      <UsageGuide
+        isOpen={usageGuideOpen}
+        onClose={() => setUsageGuideOpen(false)}
+      />
     </div>
   );
 }

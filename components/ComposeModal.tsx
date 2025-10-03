@@ -40,10 +40,10 @@ export default function ComposeModal({
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[90] p-4">
-      <div className="bg-wire-bg border-2 border-wire-stroke max-w-4xl w-full max-h-[90vh] flex flex-col">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[90] p-2 sm:p-4">
+      <div className="bg-wire-bg border-2 border-wire-stroke max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b-2 border-wire-stroke flex items-center justify-between">
+        <div className="p-3 sm:p-4 border-b-2 border-wire-stroke flex items-center justify-between">
           <h2 className="text-xl font-semibold text-wire-stroke">
             Composed Prompt
           </h2>

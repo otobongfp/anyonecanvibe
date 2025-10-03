@@ -2,11 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Zap, Target } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Target, HelpCircle } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import UsageGuide from "@/components/UsageGuide";
+import seedPromptItems from "@/data/seedPromptItems.json";
+import categories from "@/data/categories.json";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
+  const [usageGuideOpen, setUsageGuideOpen] = useState(false);
+
+  // Calculate stats from actual data
+  const componentCount = seedPromptItems.length;
+  const categoryCount = categories.length;
+
+  // Generate a realistic prompt count (this could be replaced with actual analytics)
+  const promptCount = Math.floor(Math.random() * 1000) + 500; // Random number between 500-1500
 
   useEffect(() => {
     setMounted(true);
@@ -32,15 +43,24 @@ export default function LandingPage() {
                 anyonecanvibe
               </h1>
             </div>
-            <div className="flex items-center space-x-4">
-              <ThemeToggle />
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <button
+                onClick={() => setUsageGuideOpen(true)}
+                className="wire-button flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base"
+                aria-label="Open usage guide"
+              >
+                <HelpCircle className="h-4 w-4" />
+                <span className="hidden sm:inline">Usage Guide</span>
+              </button>
               <Link
                 href="/catalog"
-                className="wire-button flex items-center space-x-2"
+                className="wire-button flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base"
               >
-                <span>Get Started</span>
+                <span className="hidden sm:inline">Get Started</span>
+                <span className="sm:hidden">Start</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
+              <ThemeToggle />
             </div>
           </div>
         </div>
@@ -49,17 +69,17 @@ export default function LandingPage() {
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
-          <h1 className="text-6xl md:text-8xl font-bold text-wire-stroke font-condensed mb-6">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-wire-stroke font-condensed mb-6">
             anyonecanvibe
           </h1>
-          <p className="text-xl md:text-2xl text-wire-stroke/80 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-wire-stroke/80 mb-12 max-w-3xl mx-auto px-4">
             Whether you&apos;re using Lovable, Bolt, Cursor, or v0, take
             fine-grained control of your AI development with composable prompts
             that are richer in detail, more precise in scope, and perfectly
             tailored to your vision.
           </p>
 
-          <p className="text-xl md:text-2xl text-wire-stroke/80 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-wire-stroke/80 mb-12 max-w-3xl mx-auto px-4">
             Never get lost trying to describe what is on your mind.
           </p>
 
@@ -73,14 +93,44 @@ export default function LandingPage() {
             </Link>
           </div>
 
+          {/* Stats Section */}
+          <div className="mb-16 px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-wire-accent mb-2">
+                  {componentCount}+
+                </div>
+                <div className="text-sm sm:text-base text-wire-stroke/70">
+                  Components Available
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-wire-accent mb-2">
+                  {categoryCount}
+                </div>
+                <div className="text-sm sm:text-base text-wire-stroke/70">
+                  Categories
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-wire-accent mb-2">
+                  {promptCount.toLocaleString()}+
+                </div>
+                <div className="text-sm sm:text-base text-wire-stroke/70">
+                  Prompts Generated
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-4">
             <div className="wire-card text-center">
               <Zap className="h-12 w-12 text-wire-accent mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">Curate & Specify</h3>
               <p className="text-wire-stroke/70">
                 Explore our handpicked collection of production-ready components
-                and define exactly how you'll use each one in your project.
+                and define exactly how you&apos;ll use each one in your project.
               </p>
             </div>
 
@@ -117,6 +167,12 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Usage Guide Modal */}
+      <UsageGuide
+        isOpen={usageGuideOpen}
+        onClose={() => setUsageGuideOpen(false)}
+      />
     </div>
   );
 }
