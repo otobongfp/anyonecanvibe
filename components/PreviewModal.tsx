@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { PromptItem } from "@/types";
 import { X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface PreviewModalProps {
   isOpen: boolean;
@@ -41,6 +42,8 @@ export default function PreviewModal({
 }: PreviewModalProps) {
   const [intent, setIntent] = useState("");
   const [showIntentInput, setShowIntentInput] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
   useEffect(() => {
     if (isOpen) {
       // Prevent body scroll when modal is open
@@ -69,6 +72,30 @@ export default function PreviewModal({
 
   const renderPreview = () => {
     switch (item.id) {
+      case "hide-show-animation":
+        return (
+          <div className="flex flex-col w-[100px] h-[160px] relative  ">
+            <AnimatePresence initial={false}>
+              {isVisible ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  className="w-[100px] h-[100px] bg-[#0cdcf7] rounded-[10px]"
+                  key="box"
+                />
+              ) : null}
+            </AnimatePresence>
+            <motion.button
+              className="bg-[#0cdcf7] rounded-[10px] py-[10px] px-[20px] text-[#0f1115] absolute bottom-0 left-0 right-0"
+              onClick={() => setIsVisible(!isVisible)}
+              whileTap={{ y: 1 }}
+            >
+              {isVisible ? "Hide" : "Show"}
+            </motion.button>
+          </div>
+        );
+
       case "product-card":
         return (
           <div className="bg-white border-2 border-gray-200 rounded-lg p-6 max-w-sm mx-auto">
@@ -387,7 +414,9 @@ export default function PreviewModal({
               <div className="text-sm text-wire-stroke/60 mb-2">
                 Component Preview:
               </div>
-              {renderPreview()}
+              <div className="flex items-center justify-center">
+                {renderPreview()}
+              </div>
             </div>
 
             <div className="mt-6 p-4 bg-wire-stroke/5 border border-wire-stroke/20 rounded">

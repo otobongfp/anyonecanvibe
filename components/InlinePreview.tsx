@@ -1,6 +1,8 @@
 "use client";
 
 import { PromptItem } from "@/types";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 interface InlinePreviewProps {
   item: PromptItem;
@@ -27,6 +29,7 @@ const getComponentPlaceholder = (title: string): string => {
 };
 
 function InlinePreview({ item }: InlinePreviewProps) {
+  const [isVisible, setIsVisible] = useState(true);
   const renderPreview = () => {
     switch (item.id) {
       case "product-card":
@@ -789,6 +792,29 @@ function InlinePreview({ item }: InlinePreviewProps) {
         return (
           <div className="bg-purple-100 p-2 rounded text-xs text-purple-800 animate-pulse">
             Pulse animation
+          </div>
+        );
+      case "hide-show-animation":
+        return (
+          <div className="flex flex-col w-[100px] h-[160px] relative">
+            <AnimatePresence initial={false}>
+              {isVisible ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  className="w-[100px] h-[100px] bg-[#0cdcf7] rounded-[10px]"
+                  key="box"
+                />
+              ) : null}
+            </AnimatePresence>
+            <motion.button
+              className="bg-[#0cdcf7] rounded-[10px] py-[10px] px-[20px] text-[#0f1115] absolute bottom-0 left-0 right-0"
+              onClick={() => setIsVisible(!isVisible)}
+              whileTap={{ y: 1 }}
+            >
+              {isVisible ? "Hide" : "Show"}
+            </motion.button>
           </div>
         );
 

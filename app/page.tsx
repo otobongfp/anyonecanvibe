@@ -20,19 +20,56 @@ export default function LandingPage() {
   const promptCount = Math.floor(Math.random() * 1000) + 500; // Random number between 500-1500
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => {
+      setMounted(true);
+    }, 3000);
   }, []);
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-wire-bg flex items-center justify-center">
-        <div className="animate-pulse text-wire-stroke text-xl">Loading...</div>
+      <div className="min-h-screen bg-wire-bg flex items-center justify-center relative overflow-hidden">
+        {/* Pulsating Circles */}
+        <div className="absolute inset-0 pointer-events-none">
+          {Array.from({ length: 25 }, (_, i) => (
+            <div
+              key={i}
+              className="absolute rounded-full bg-wire-accent/40"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 8 + 4}px`,
+                height: `${Math.random() * 8 + 4}px`,
+                animation: `pulse ${Math.random() * 3 + 2}s ease-in-out ${
+                  Math.random() * 3
+                }s infinite`,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className=" text-wire-stroke text-xl relative z-10">
+          Loading...
+        </div>
+
+        <style jsx>{`
+          @keyframes pulse {
+            0%,
+            100% {
+              opacity: 0.2;
+              transform: scale(1);
+            }
+            50% {
+              opacity: 0.8;
+              transform: scale(1.3);
+            }
+          }
+        `}</style>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-wire-bg">
+    <div className="h-screen  min-h-screen bg-wire-bg overflow-y-scroll ">
       {/* Header */}
       <header className="border-b-2 border-wire-stroke">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +104,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 ">
         <div className="text-center">
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-wire-stroke font-condensed mb-6">
             anyonecanvibe
@@ -86,7 +123,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link
               href="/catalog"
-              className="wire-button text-lg px-8 py-4 flex items-center justify-center space-x-2"
+              className="wire-button text-lg px-8 py-4 flex items-center justify-center space-x-2 "
             >
               <span>Start Composing</span>
               <ArrowRight className="h-5 w-5" />
