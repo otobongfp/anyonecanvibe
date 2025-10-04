@@ -1,8 +1,8 @@
 "use client";
 
 import { PromptItem } from "@/types";
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
+import { useRef, useState } from "react";
 
 interface InlinePreviewProps {
   item: PromptItem;
@@ -818,6 +818,9 @@ function InlinePreview({ item }: InlinePreviewProps) {
           </div>
         );
 
+      // case "track-element-within-viewport":
+      //   return <TrackElementWithinViewport />;
+
       default:
         return (
           <div className="bg-gray-100 p-3 rounded text-center">
@@ -840,3 +843,64 @@ function InlinePreview({ item }: InlinePreviewProps) {
 }
 
 export default InlinePreview;
+
+// function Item() {
+//   const ref = useRef(null);
+//   const { scrollYProgress } = useScroll({
+//     target: ref,
+//     offset: ["end end", "start start"],
+//   });
+
+//   return (
+//     <section className="h-screen max-h-[400px] flex justify-center items-center">
+//       <div
+//         ref={ref}
+//         className="w-[200px] h-[250px] border-2 border-dotted border-[#ff0088] relative"
+//       >
+//         <figure className="sticky top-0 w-[80px] h-[80px] m-0 p-0">
+//           <svg
+//             className="transform -translate-x-[100px] -rotate-90 stroke-[#ff0088]"
+//             width="75"
+//             height="75"
+//             viewBox="0 0 100 100"
+//           >
+//             <circle
+//               cx="50"
+//               cy="50"
+//               r="30"
+//               pathLength="1"
+//               className="opacity-20 stroke-[#ff0088] stroke-5 fill-none"
+//             />
+//             <motion.circle
+//               cx="50"
+//               cy="50"
+//               r="30"
+//               pathLength="1"
+//               className="stroke-[#ff0088] stroke-5 fill-none"
+//               style={{ pathLength: scrollYProgress }}
+//             />
+//           </svg>
+//         </figure>
+//       </div>
+//     </section>
+//   );
+// }
+
+// function TrackElementWithinViewport() {
+//   return (
+//     <>
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//       <Item />
+//     </>
+//   );
+// }

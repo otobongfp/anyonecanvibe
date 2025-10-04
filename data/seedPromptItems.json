@@ -299,16 +299,7 @@
     "variables": ["framework", "style"],
     "icon": "Eye"
   },
-  {
-    "id": "track-element-within-viewport",
-    "title": "Track Element Within Viewport",
-    "category": "UI / Frontend",
-    "subcategory": "Animations",
-    "description": "A component that tracks scroll progress within a viewport using a circular indicator",
-    "template": "Create a scroll-tracking component using React, Tailwind CSS and Framer Motion. The component displays a circular SVG progress indicator that updates based on scroll position within a section, using Framer Motion. Ensure accessibility with ARIA roles and keyboard navigation.",
-    "variables": ["framework", "style"],
-    "icon": "Circle"
-  },
+
   {
     "id": "tooltip-component",
     "title": "Tooltip Component",
