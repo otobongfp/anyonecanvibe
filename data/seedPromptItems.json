@@ -599,5 +599,333 @@
     "template": "Pulse animation component with customizable speed, scale, and color. Include different pulse patterns and conditional activation.",
     "variables": [],
     "icon": "Activity"
+  },
+  {
+    "id": "rest-api-endpoint",
+    "title": "REST API Endpoint",
+    "category": "Backend / Database",
+    "subcategory": "APIs",
+    "description": "Create REST API endpoints with proper validation and error handling",
+    "template": "Create a REST API endpoint for [purpose] using [method] method. Include request validation, error handling, proper HTTP status codes, and response formatting. Use [framework] framework.",
+    "variables": ["purpose", "method", "framework"],
+    "icon": "Globe",
+    "business_intents": [
+      "Handle user registration and login",
+      "Process customer orders and payments",
+      "Manage product inventory",
+      "Send email notifications",
+      "Handle file uploads",
+      "Process search requests",
+      "Manage user profiles",
+      "Handle contact form submissions"
+    ]
+  },
+  {
+    "id": "graphql-resolver",
+    "title": "GraphQL Resolver",
+    "category": "Backend / Database",
+    "subcategory": "APIs",
+    "description": "GraphQL resolvers for queries and mutations",
+    "template": "Create a GraphQL resolver for [entity] with [operations] operations. Include input validation, error handling, proper response formatting, and type definitions.",
+    "variables": ["entity", "operations"],
+    "icon": "Network"
+  },
+  {
+    "id": "webhook-handler",
+    "title": "Webhook Handler",
+    "category": "Backend / Database",
+    "subcategory": "APIs",
+    "description": "Handle incoming webhooks from external services",
+    "template": "Create a webhook handler for [service] that processes [event_type] events. Include signature verification, retry logic, error handling, and proper response codes.",
+    "variables": ["service", "event_type"],
+    "icon": "Webhook"
+  },
+  {
+    "id": "file-upload-api",
+    "title": "File Upload API",
+    "category": "Backend / Database",
+    "subcategory": "APIs",
+    "description": "Handle file uploads with validation and storage",
+    "template": "Create a file upload API endpoint that accepts [file_types] files. Include file validation, size limits, virus scanning, and secure storage. Return file URLs and metadata.",
+    "variables": ["file_types"],
+    "icon": "Upload"
+  },
+  {
+    "id": "search-api",
+    "title": "Search API",
+    "category": "Backend / Database",
+    "subcategory": "APIs",
+    "description": "Implement search functionality with filters and pagination",
+    "template": "Create a search API for [content_type] with [search_features] features. Include pagination, sorting, filtering, and full-text search capabilities.",
+    "variables": ["content_type", "search_features"],
+    "icon": "Search"
+  },
+  {
+    "id": "bulk-operations-api",
+    "title": "Bulk Operations API",
+    "category": "Backend / Database",
+    "subcategory": "APIs",
+    "description": "Handle batch processing operations",
+    "template": "Create a bulk operations API for [operation_type] that processes multiple items efficiently. Include progress tracking, error handling, and rollback capabilities.",
+    "variables": ["operation_type"],
+    "icon": "Layers"
+  },
+  {
+    "id": "database-schema",
+    "title": "Database Schema",
+    "category": "Backend / Database",
+    "subcategory": "Database",
+    "description": "Design database tables with relationships and constraints",
+    "template": "Design a database schema for [entity] with tables for [tables]. Include proper relationships, foreign keys, indexes, constraints, and data types. Use [database_type] database.",
+    "variables": ["entity", "tables", "database_type"],
+    "icon": "Database",
+    "business_intents": [
+      "Store user information and profiles",
+      "Manage product catalog and inventory",
+      "Track orders and transactions",
+      "Store blog posts and content",
+      "Manage team members and permissions",
+      "Track analytics and user behavior",
+      "Store customer support tickets",
+      "Manage subscriptions and billing"
+    ]
+  },
+  {
+    "id": "database-migration",
+    "title": "Database Migration",
+    "category": "Backend / Database",
+    "subcategory": "Database",
+    "description": "Create database schema changes with rollback support",
+    "template": "Create a database migration to [action] [table] table. Include rollback functionality, data validation, and proper error handling. Use [migration_tool].",
+    "variables": ["action", "table", "migration_tool"],
+    "icon": "ArrowUpDown"
+  },
+  {
+    "id": "database-query",
+    "title": "Database Query",
+    "category": "Backend / Database",
+    "subcategory": "Database",
+    "description": "Optimized database queries with joins and filters",
+    "template": "Write an optimized [query_type] query for [purpose] with proper joins, filters, pagination, and performance considerations. Include query explanation and optimization notes.",
+    "variables": ["query_type", "purpose"],
+    "icon": "FileSearch"
+  },
+  {
+    "id": "database-indexing",
+    "title": "Database Indexing",
+    "category": "Backend / Database",
+    "subcategory": "Database",
+    "description": "Create database indexes for performance optimization",
+    "template": "Create database indexes for [table] table to optimize [query_patterns] queries. Include composite indexes, partial indexes, and performance analysis.",
+    "variables": ["table", "query_patterns"],
+    "icon": "TrendingUp"
+  },
+  {
+    "id": "data-validation",
+    "title": "Data Validation",
+    "category": "Backend / Database",
+    "subcategory": "Database",
+    "description": "Input sanitization and data validation",
+    "template": "Implement data validation for [data_type] with [validation_rules] rules. Include sanitization, type checking, format validation, and custom business rules.",
+    "variables": ["data_type", "validation_rules"],
+    "icon": "Shield"
+  },
+  {
+    "id": "database-backup",
+    "title": "Database Backup",
+    "category": "Backend / Database",
+    "subcategory": "Database",
+    "description": "Automated database backup and recovery",
+    "template": "Create automated database backup system for [database_type] with [backup_frequency] frequency. Include compression, encryption, retention policies, and recovery procedures.",
+    "variables": ["database_type", "backup_frequency"],
+    "icon": "Archive"
+  },
+  {
+    "id": "jwt-authentication",
+    "title": "JWT Authentication",
+    "category": "Backend / Database",
+    "subcategory": "Authentication",
+    "description": "Token-based authentication with JWT",
+    "template": "Implement JWT authentication with [provider] login, token generation, refresh tokens, middleware for protected routes, and proper token validation.",
+    "variables": ["provider"],
+    "icon": "Key",
+    "business_intents": [
+      "Secure user login and registration",
+      "Protect user accounts and data",
+      "Enable user sessions across devices",
+      "Manage user access to features",
+      "Implement secure API access",
+      "Handle user logout and session expiry"
+    ]
+  },
+  {
+    "id": "oauth-integration",
+    "title": "OAuth Integration",
+    "category": "Backend / Database",
+    "subcategory": "Authentication",
+    "description": "OAuth integration with external providers",
+    "template": "Integrate OAuth with [provider] for user authentication. Include callback handling, user profile sync, session management, and error handling.",
+    "variables": ["provider"],
+    "icon": "Users"
+  },
+  {
+    "id": "role-based-access",
+    "title": "Role-Based Access Control",
+    "category": "Backend / Database",
+    "subcategory": "Authentication",
+    "description": "Permission system with roles and access control",
+    "template": "Implement RBAC system with [roles] roles and [permissions] permissions. Include middleware for route protection, permission checking, and role management.",
+    "variables": ["roles", "permissions"],
+    "icon": "Lock"
+  },
+  {
+    "id": "password-reset",
+    "title": "Password Reset",
+    "category": "Backend / Database",
+    "subcategory": "Authentication",
+    "description": "Secure password reset functionality",
+    "template": "Create password reset functionality with email verification, secure token generation, expiration handling, and rate limiting for security.",
+    "variables": [],
+    "icon": "RefreshCw"
+  },
+  {
+    "id": "two-factor-auth",
+    "title": "Two-Factor Authentication",
+    "category": "Backend / Database",
+    "subcategory": "Authentication",
+    "description": "Enhanced security with 2FA",
+    "template": "Implement two-factor authentication using [method] method. Include QR code generation, backup codes, verification handling, and user preferences.",
+    "variables": ["method"],
+    "icon": "Smartphone"
+  },
+  {
+    "id": "session-management",
+    "title": "Session Management",
+    "category": "Backend / Database",
+    "subcategory": "Authentication",
+    "description": "User session handling and management",
+    "template": "Create session management system with [session_type] sessions. Include session creation, validation, expiration, cleanup, and security measures.",
+    "variables": ["session_type"],
+    "icon": "Clock"
+  },
+  {
+    "id": "redis-cache",
+    "title": "Redis Cache",
+    "category": "Backend / Database",
+    "subcategory": "Caching",
+    "description": "In-memory caching with Redis",
+    "template": "Implement Redis caching for [cache_purpose] with [cache_strategy] strategy. Include cache invalidation, TTL management, and performance monitoring.",
+    "variables": ["cache_purpose", "cache_strategy"],
+    "icon": "Zap"
+  },
+  {
+    "id": "database-caching",
+    "title": "Database Caching",
+    "category": "Backend / Database",
+    "subcategory": "Caching",
+    "description": "Query result caching for performance",
+    "template": "Implement database query caching for [query_type] queries with [cache_duration] duration. Include cache invalidation, hit/miss tracking, and performance metrics.",
+    "variables": ["query_type", "cache_duration"],
+    "icon": "Database"
+  },
+  {
+    "id": "cdn-setup",
+    "title": "CDN Setup",
+    "category": "Backend / Database",
+    "subcategory": "Caching",
+    "description": "Content delivery network configuration",
+    "template": "Configure CDN for [content_type] with [cdn_provider]. Include cache headers, compression, edge locations, and performance optimization.",
+    "variables": ["content_type", "cdn_provider"],
+    "icon": "Globe"
+  },
+  {
+    "id": "cache-invalidation",
+    "title": "Cache Invalidation",
+    "category": "Backend / Database",
+    "subcategory": "Caching",
+    "description": "Smart cache invalidation strategies",
+    "template": "Implement cache invalidation strategy for [cache_type] with [invalidation_method] method. Include dependency tracking, batch invalidation, and consistency checks.",
+    "variables": ["cache_type", "invalidation_method"],
+    "icon": "RefreshCw"
+  },
+  {
+    "id": "file-upload-handler",
+    "title": "File Upload Handler",
+    "category": "Backend / Database",
+    "subcategory": "File Upload",
+    "description": "Process and validate file uploads",
+    "template": "Create file upload handler for [file_types] files with [validation_rules] validation. Include progress tracking, error handling, and secure processing.",
+    "variables": ["file_types", "validation_rules"],
+    "icon": "Upload"
+  },
+  {
+    "id": "image-processing",
+    "title": "Image Processing",
+    "category": "Backend / Database",
+    "subcategory": "File Upload",
+    "description": "Resize, optimize, and process images",
+    "template": "Implement image processing for [image_operations] operations. Include resizing, compression, format conversion, watermarking, and optimization.",
+    "variables": ["image_operations"],
+    "icon": "Image"
+  },
+  {
+    "id": "file-storage",
+    "title": "File Storage",
+    "category": "Backend / Database",
+    "subcategory": "File Upload",
+    "description": "Cloud storage integration for files",
+    "template": "Integrate [storage_provider] for file storage with [storage_features] features. Include upload, download, deletion, and access control.",
+    "variables": ["storage_provider", "storage_features"],
+    "icon": "Cloud"
+  },
+  {
+    "id": "file-validation",
+    "title": "File Validation",
+    "category": "Backend / Database",
+    "subcategory": "File Upload",
+    "description": "Security checks and file validation",
+    "template": "Implement file validation with [security_checks] checks. Include virus scanning, file type verification, content analysis, and security measures.",
+    "variables": ["security_checks"],
+    "icon": "Shield"
+  },
+  {
+    "id": "payment-webhook",
+    "title": "Payment Webhook",
+    "category": "Backend / Database",
+    "subcategory": "Webhooks",
+    "description": "Handle payment processing webhooks",
+    "template": "Create payment webhook handler for [payment_provider] with [event_types] event types. Include signature verification, idempotency, and transaction processing.",
+    "variables": ["payment_provider", "event_types"],
+    "icon": "CreditCard"
+  },
+  {
+    "id": "email-webhook",
+    "title": "Email Webhook",
+    "category": "Backend / Database",
+    "subcategory": "Webhooks",
+    "description": "Process email service webhooks",
+    "template": "Create email webhook handler for [email_service] with [webhook_events] events. Include event processing, status tracking, and error handling.",
+    "variables": ["email_service", "webhook_events"],
+    "icon": "Mail"
+  },
+  {
+    "id": "analytics-webhook",
+    "title": "Analytics Webhook",
+    "category": "Backend / Database",
+    "subcategory": "Webhooks",
+    "description": "Handle analytics and tracking webhooks",
+    "template": "Create analytics webhook handler for [analytics_provider] with [event_types] event types. Include data processing, aggregation, and reporting.",
+    "variables": ["analytics_provider", "event_types"],
+    "icon": "BarChart"
+  },
+  {
+    "id": "notification-webhook",
+    "title": "Notification Webhook",
+    "category": "Backend / Database",
+    "subcategory": "Webhooks",
+    "description": "Process notification service webhooks",
+    "template": "Create notification webhook handler for [notification_service] with [notification_types] types. Include delivery tracking, retry logic, and user preferences.",
+    "variables": ["notification_service", "notification_types"],
+    "icon": "Bell"
   }
 ]

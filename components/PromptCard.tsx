@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { PromptItem } from "@/types";
-import { Plus, Check, Eye } from "lucide-react";
+import { Plus, Check, Eye, Lightbulb } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import InlinePreview from "./InlinePreview";
 import InlinePreviewLayouts from "./InlinePreviewLayouts";
@@ -12,6 +12,7 @@ interface PromptCardProps {
   onAdd: (itemId: string, intent: string) => void;
   isAdded?: boolean;
   onPreview?: (item: PromptItem) => void;
+  onBackendSuggestion?: (item: PromptItem) => void;
 }
 
 export default function PromptCard({
@@ -19,6 +20,7 @@ export default function PromptCard({
   onAdd,
   isAdded = false,
   onPreview,
+  onBackendSuggestion,
 }: PromptCardProps) {
   const [showIntentInput, setShowIntentInput] = useState(false);
   const [intent, setIntent] = useState("");
@@ -81,27 +83,64 @@ export default function PromptCard({
 
       <p className="text-wire-stroke/80 text-sm mb-4">{item.description}</p>
 
-      {/* Inline Preview */}
-      {item.subcategory === "Layouts" ? (
-        <InlinePreviewLayouts item={item} />
-      ) : (
-        <InlinePreview item={item} />
+      {/* Inline Preview - Only for frontend components */}
+      {item.category !== "Backend / Database" && (
+        <>
+          {item.subcategory === "Layouts" ? (
+            <InlinePreviewLayouts item={item} />
+          ) : (
+            <InlinePreview item={item} />
+          )}
+        </>
+      )}
+
+      {/* Business Intents for Backend Components */}
+      {item.category === "Backend / Database" && item.business_intents && (
+        <div className="mt-3 p-3 bg-wire-stroke/5 rounded border border-wire-stroke/20">
+          <div className="text-xs text-wire-stroke/60 mb-2">Common uses:</div>
+          <div className="flex flex-wrap gap-1">
+            {item.business_intents.slice(0, 3).map((intent, index) => (
+              <span
+                key={index}
+                className="text-xs bg-wire-stroke/10 text-wire-stroke/70 px-2 py-1 rounded"
+              >
+                {intent}
+              </span>
+            ))}
+          </div>
+        </div>
       )}
 
       {/* Action Buttons */}
       <div className="flex justify-end mt-3">
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            onPreview?.(item);
-          }}
-          className="wire-button p-2"
-          aria-label="Show full preview"
-          title="Show full preview"
-        >
-          <Eye className="h-4 w-4" />
-        </button>
+        {item.category === "Backend / Database" ? (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onBackendSuggestion?.(item);
+            }}
+            className="wire-button p-2 flex items-center space-x-2"
+            aria-label="Get suggestions for this component"
+            title="Get suggestions"
+          >
+            <Lightbulb className="h-4 w-4" />
+            <span className="text-sm">Suggestions</span>
+          </button>
+        ) : (
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onPreview?.(item);
+            }}
+            className="wire-button p-2"
+            aria-label="Show full preview"
+            title="Show full preview"
+          >
+            <Eye className="h-4 w-4" />
+          </button>
+        )}
       </div>
 
       {showIntentInput && (

@@ -2,15 +2,24 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Zap, Target, HelpCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  Zap,
+  Target,
+  HelpCircle,
+  Lightbulb,
+} from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import UsageGuide from "@/components/UsageGuide";
+import WhyModal from "@/components/WhyModal";
 import seedPromptItems from "@/data/seedPromptItems.json";
 import categories from "@/data/categories.json";
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false);
   const [usageGuideOpen, setUsageGuideOpen] = useState(false);
+  const [whyModalOpen, setWhyModalOpen] = useState(false);
 
   // Calculate stats from actual data
   const componentCount = seedPromptItems.length;
@@ -88,6 +97,14 @@ export default function LandingPage() {
               >
                 <HelpCircle className="h-4 w-4" />
                 <span className="hidden sm:inline">Usage Guide</span>
+              </button>
+              <button
+                onClick={() => setWhyModalOpen(true)}
+                className="wire-button flex items-center space-x-1 sm:space-x-2 text-sm sm:text-base"
+                aria-label="Learn why we built this"
+              >
+                <Lightbulb className="h-4 w-4" />
+                <span className="hidden sm:inline">Why?</span>
               </button>
               <Link
                 href="/catalog"
@@ -210,6 +227,9 @@ export default function LandingPage() {
         isOpen={usageGuideOpen}
         onClose={() => setUsageGuideOpen(false)}
       />
+
+      {/* Why Modal */}
+      <WhyModal isOpen={whyModalOpen} onClose={() => setWhyModalOpen(false)} />
     </div>
   );
 }

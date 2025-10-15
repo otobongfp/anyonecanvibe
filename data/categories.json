@@ -23,7 +23,7 @@
     "id": "backend-database",
     "name": "Backend / Database",
     "description": "Server-side logic and data management",
-    "active": false,
+    "active": true,
     "subcategories": [
       "APIs",
       "Database",
@@ -31,34 +31,6 @@
       "Caching",
       "File Upload",
       "Webhooks"
-    ]
-  },
-  {
-    "id": "devops",
-    "name": "DevOps",
-    "description": "Deployment and infrastructure",
-    "active": false,
-    "subcategories": [
-      "Docker",
-      "CI/CD",
-      "Monitoring",
-      "Security",
-      "Scaling",
-      "Backup"
-    ]
-  },
-  {
-    "id": "data-ml",
-    "name": "Data / ML",
-    "description": "Data processing and machine learning",
-    "active": false,
-    "subcategories": [
-      "Data Processing",
-      "ML Models",
-      "Analytics",
-      "Visualization",
-      "ETL",
-      "APIs"
     ]
   },
   {

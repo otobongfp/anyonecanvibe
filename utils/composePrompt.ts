@@ -6,7 +6,13 @@ import { PromptItem, BucketItem, ComposeResult } from "@/types";
 export function composePrompt(
   bucketItems: BucketItem[],
   promptItems: PromptItem[],
-  bucketVars: { framework: string; language: string; style: string }
+  bucketVars: {
+    framework: string;
+    language: string;
+    style: string;
+    database: string;
+    platform: string;
+  }
 ): ComposeResult {
   // Filter enabled items and sort by addedAt (order in bucket)
   const enabledItems = bucketItems
@@ -21,9 +27,9 @@ export function composePrompt(
   });
 
   // Build the merged prompt
-  const systemPrompt = `System: You are an AI assistant that writes production-ready frontend code. Output only code blocks unless asked otherwise.
+  const systemPrompt = `System: You are an AI assistant that writes production-ready code. Output only code blocks unless asked otherwise.
 
-Context: Project uses React + TypeScript + Tailwind. No backend.`;
+Context: Project uses [framework] + [language] + [database]. Deploy to [platform].`;
 
   const instructions = items.map(({ bucketItem, promptItem }) => {
     // Expand variables in template
@@ -39,9 +45,18 @@ Context: Project uses React + TypeScript + Tailwind. No backend.`;
     return `${promptItem.title}: ${expandedTemplate} - ${bucketItem.intent}`;
   });
 
-  const constraints = `Constraints: No external animation libraries; keep functions <= 120 lines; use accessible markup; include filenames when outputting files`;
+  // Determine if this is a backend-focused prompt
+  const hasBackendComponents = items.some(
+    ({ promptItem }) => promptItem.category === "Backend / Database"
+  );
 
-  const outputFormat = `Output format: "Return files and code in code blocks. Provide file names and content. For UI components return .tsx components and a small usage snippet."`;
+  const constraints = hasBackendComponents
+    ? `Constraints: Follow security best practices; include proper error handling; use environment variables for configuration; add logging and monitoring; implement proper validation`
+    : `Constraints: No external animation libraries; keep functions <= 120 lines; use accessible markup; include filenames when outputting files`;
+
+  const outputFormat = hasBackendComponents
+    ? `Output format: Return files and code in code blocks. Provide file names, setup instructions, and deployment notes. Include API documentation and testing examples.`
+    : `Output format: "Return files and code in code blocks. Provide file names and content. For UI components return .tsx components and a small usage snippet."`;
 
   const finish = `Finish: "If you cannot implement an item as specified, explain briefly why and give a minimal alternative."`;
 
@@ -74,7 +89,13 @@ Context: Project uses React + TypeScript + Tailwind. No backend.`;
 export function createConcisePrompt(
   bucketItems: BucketItem[],
   promptItems: PromptItem[],
-  bucketVars: { framework: string; language: string; style: string }
+  bucketVars: {
+    framework: string;
+    language: string;
+    style: string;
+    database: string;
+    platform: string;
+  }
 ): ComposeResult {
   const fullResult = composePrompt(bucketItems, promptItems, bucketVars);
 
@@ -93,9 +114,9 @@ export function createConcisePrompt(
     return { bucketItem, promptItem };
   });
 
-  const systemPrompt = `System: You are an AI assistant that writes production-ready frontend code. Output only code blocks unless asked otherwise.
+  const systemPrompt = `System: You are an AI assistant that writes production-ready code. Output only code blocks unless asked otherwise.
 
-Context: Project uses React + TypeScript + Tailwind. No backend.`;
+Context: Project uses [framework] + [language] + [database]. Deploy to [platform].`;
 
   const instructions = items.map(({ bucketItem, promptItem }) => {
     // Simplified template without verbose examples
@@ -111,14 +132,23 @@ Context: Project uses React + TypeScript + Tailwind. No backend.`;
     return `${promptItem.title}: ${expandedTemplate} - ${bucketItem.intent}`;
   });
 
+  // Determine if this is a backend-focused prompt
+  const hasBackendComponents = items.some(
+    ({ promptItem }) => promptItem.category === "Backend / Database"
+  );
+
   const concisePrompt = [
     systemPrompt,
     "",
     "Instructions:",
     ...instructions.map((instruction, index) => `${index + 1}. ${instruction}`),
     "",
-    "Constraints: No external libraries; accessible markup; include filenames.",
-    "Output: Code blocks with file names and content.",
+    hasBackendComponents
+      ? "Constraints: Security best practices; error handling; environment variables; logging."
+      : "Constraints: No external libraries; accessible markup; include filenames.",
+    hasBackendComponents
+      ? "Output: Code blocks with file names, setup instructions, and API docs."
+      : "Output: Code blocks with file names and content.",
     "Finish: Explain briefly if unable to implement, provide minimal alternative.",
   ].join("\n");
 

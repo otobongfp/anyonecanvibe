@@ -9,6 +9,7 @@ export interface PromptItem {
   template: string;
   variables?: string[];
   icon?: string;
+  business_intents?: string[];
 }
 
 export interface BucketItem {
@@ -25,6 +26,8 @@ export interface AppState {
     framework: string;
     language: string;
     style: string;
+    database: string;
+    platform: string;
   };
 }
 

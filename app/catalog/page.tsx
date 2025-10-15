@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Sparkles, HelpCircle } from "lucide-react";
+import { Sparkles, HelpCircle } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import UsageGuide from "@/components/UsageGuide";
 import { PromptItem, BucketItem, Category, AppState } from "@/types";
@@ -22,7 +22,9 @@ import Sidebar from "@/components/Sidebar";
 import BucketPanel from "@/components/BucketPanel";
 import ComposeModal from "@/components/ComposeModal";
 import PreviewModal from "@/components/PreviewModal";
+import BackendSuggestionModal from "@/components/BackendSuggestionModal";
 import SearchBar from "@/components/SearchBar";
+import { ArrowLeft } from "lucide-react";
 
 // Import seed data
 import seedPromptItems from "@/data/seedPromptItems.json";
@@ -35,6 +37,8 @@ export default function CatalogPage() {
       framework: "React",
       language: "TypeScript",
       style: "Tailwind",
+      database: "PostgreSQL",
+      platform: "Vercel",
     },
   });
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
@@ -50,6 +54,9 @@ export default function CatalogPage() {
   const [view, setView] = useState<"categories" | "components">("categories");
   const [previewModalOpen, setPreviewModalOpen] = useState(false);
   const [previewItem, setPreviewItem] = useState<PromptItem | null>(null);
+  const [backendSuggestionOpen, setBackendSuggestionOpen] = useState(false);
+  const [backendSuggestionItem, setBackendSuggestionItem] =
+    useState<PromptItem | null>(null);
   const [searchResults, setSearchResults] = useState<PromptItem[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [usageGuideOpen, setUsageGuideOpen] = useState(false);
@@ -129,6 +136,11 @@ export default function CatalogPage() {
     setPreviewModalOpen(true);
   };
 
+  const handleBackendSuggestion = (item: PromptItem) => {
+    setBackendSuggestionItem(item);
+    setBackendSuggestionOpen(true);
+  };
+
   const handleSearchResults = (results: PromptItem[]) => {
     setSearchResults(results);
     setIsSearching(results.length !== promptItems.length);
@@ -158,20 +170,16 @@ export default function CatalogPage() {
       <header className="border-b-2 border-wire-stroke">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
               <Link
                 href="/"
-                className="wire-button p-2"
-                aria-label="Back to home"
+                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
               >
-                <ArrowLeft className="h-4 w-4" />
-              </Link>
-              <div className="flex items-center space-x-2">
                 <Sparkles className="h-6 w-6 text-wire-accent" />
                 <h1 className="text-xl font-bold text-wire-stroke font-condensed">
                   anyonecanvibe
                 </h1>
-              </div>
+              </Link>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4">
               <button
@@ -292,6 +300,7 @@ export default function CatalogPage() {
                       onAdd={handleAddToBucket}
                       isAdded={bucketItemIds.has(item.id)}
                       onPreview={handlePreviewItem}
+                      onBackendSuggestion={handleBackendSuggestion}
                     />
                   ))}
                 </div>
@@ -347,6 +356,19 @@ export default function CatalogPage() {
       <UsageGuide
         isOpen={usageGuideOpen}
         onClose={() => setUsageGuideOpen(false)}
+      />
+
+      {/* Backend Suggestion Modal */}
+      <BackendSuggestionModal
+        isOpen={backendSuggestionOpen}
+        onClose={() => {
+          setBackendSuggestionOpen(false);
+          setBackendSuggestionItem(null);
+        }}
+        onAddToBucket={(item, intent) => {
+          handleAddToBucket(item.id, intent);
+        }}
+        promptItems={promptItems}
       />
     </div>
   );
